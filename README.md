@@ -1,13 +1,5 @@
 
----
-title: SafarSavvy AI
-emoji: 🚌
-colorFrom: indigo
-colorTo: blue
-sdk: uvicorn
-app_file: app.py
-python_version: 3.10
----
+
 
 # 🚀 SafarSavvy AI - University Transport Assistant
 
@@ -41,12 +33,6 @@ SafarSavvy AI is a professional-grade **Retrieval-Augmented Generation (RAG)** s
 
 ## 🚀 **Key Features**
 
-### 📚 **Document Management**
-- **Persistent Storage** - Documents stay available after upload
-- **Multiple Formats** - Supports text-based and scanned PDFs
-- **Password Protection** - Handles encrypted PDFs
-- **Batch Processing** - Efficient handling of large documents
-- **Document Analytics** - Track document usage and performance
 
 ### 🤖 **AI-Powered Chat**
 - **Natural Language Queries** - Ask questions in plain English
@@ -58,7 +44,6 @@ SafarSavvy AI is a professional-grade **Retrieval-Augmented Generation (RAG)** s
 ### 🎨 **Professional Interface**
 - **Modern UI/UX** - Clean, professional design
 - **Responsive Design** - Works on all devices
-- **Drag & Drop** - Easy file uploads
 - **Real-time Updates** - Live progress indicators
 - **Professional Branding** - Ready for company use
 
@@ -76,15 +61,13 @@ SafarSavvy AI is a professional-grade **Retrieval-Augmented Generation (RAG)** s
 - **Vector Database**: ChromaDB
 - **Embeddings**: Sentence Transformers (all-mpnet-base-v2)
 - **Frontend**: HTML5, CSS3, JavaScript
-- **Database**: SQLite with SQLAlchemy ORM
-- **PDF Processing**: PyMuPDF, pdfplumber, PyPDF2, OCR
+
 
 ## 📋 **Requirements**
 
 ### System Requirements
 - **OS**: Windows 10/11, macOS, Linux
 - **RAM**: Minimum 4GB, Recommended 8GB+
-- **Storage**: 2GB free space
 - **Python**: 3.8 or higher
 
 ### Software Dependencies
@@ -125,84 +108,7 @@ python start.py
 ### 5. **Access the Interface**
 Open your browser and go to: `http://localhost:8000`
 
-## 📖 **Usage Guide**
 
-### **Uploading Documents**
-1. Click "Upload Document" button
-2. Drag & drop your PDF or click to browse
-3. Enter password if PDF is protected
-4. Wait for processing (usually 10-30 seconds)
-5. Document is now available for queries
-
-### **Asking Questions**
-1. Type your question in the chat box
-2. Press Enter or click Send
-3. AI searches through your documents
-4. Get instant, accurate answers
-5. Continue the conversation naturally
-
-### **Managing Documents**
-- **View All Documents**: Click "Documents" button
-- **Document Info**: Click "Info" on any document
-- **Delete Documents**: Click "Delete" (with confirmation)
-- **System Stats**: View total documents, chunks, and characters
-
-## 🔧 **Configuration Options**
-
-### **Memory Management**
-```python
-# In config.py
-MAX_FILE_SIZE_MB = 25          # Maximum PDF file size
-MAX_PDF_PAGES = 100           # Maximum pages per PDF
-MAX_TEXT_LENGTH = 1000000     # Maximum text length (1MB)
-MAX_CHUNKS = 50               # Maximum chunks per document
-CHUNK_SIZE = 300              # Characters per chunk
-CHUNK_OVERLAP = 50            # Overlap between chunks
-```
-
-### **AI Model Settings**
-```python
-# In grok_integration.py
-MODEL_NAME = "grok-beta"      # AI model to use
-TEMPERATURE = 0.7             # Response creativity (0.0-1.0)
-MAX_TOKENS = 1500             # Maximum response length
-```
-
-## 📊 **Performance & Optimization**
-
-### **Speed Optimizations**
-- **Fast Chunking**: Simple, efficient text splitting
-- **Batch Processing**: Vector operations in batches
-- **Memory Management**: Optimized for large documents
-- **Caching**: Intelligent response caching
-
-### **Memory Optimizations**
-- **Garbage Collection**: Automatic memory cleanup
-- **Chunk Limits**: Prevents memory overflow
-- **File Size Limits**: Configurable upload limits
-- **Progress Monitoring**: Real-time memory usage tracking
-
-## 🔒 **Security Features**
-
-- **Local Processing**: Documents processed on your server
-- **No External Storage**: All data stays within your system
-- **Secure API Keys**: Environment variable protection
-- **Input Validation**: Robust file and input validation
-- **Error Handling**: Secure error messages
-
-## 📈 **Monitoring & Analytics**
-
-### **System Health**
-- **Health Check Endpoint**: `/health`
-- **Memory Usage**: Real-time monitoring
-- **Processing Times**: Performance tracking
-- **Error Logging**: Comprehensive error tracking
-
-### **Document Analytics**
-- **Upload Statistics**: Document count and sizes
-- **Usage Patterns**: Query frequency and types
-- **Performance Metrics**: Response times and accuracy
-- **System Resources**: Memory and CPU usage
 
 ## 🚀 **Deployment Options**
 
@@ -233,44 +139,6 @@ docker run -p 8000:8000 safarsavvy-ai
 ```bash
 python test_system.py
 ```
-
-### **API Testing**
-```bash
-# Health check
-curl http://localhost:8000/health
-
-# List documents
-curl http://localhost:8000/documents/
-
-# Upload test
-curl -X POST -F "file=@test.pdf" http://localhost:8000/upload-pdf/
-```
-
-## 🐛 **Troubleshooting**
-
-### **Common Issues**
-
-#### **PDF Upload Fails**
-- Check file size (max 25MB)
-- Verify PDF is not corrupted
-- Check if password is required
-
-#### **Slow Processing**
-- Reduce chunk size in config
-- Check available memory
-- Monitor system resources
-
-#### **AI Responses Poor**
-- Verify Grok API key
-- Check internet connection
-- Review document quality
-
-### **Performance Tips**
-- **Small Documents**: Use smaller chunk sizes
-- **Large Documents**: Increase memory limits
-- **Frequent Queries**: Enable response caching
-- **Multiple Users**: Scale horizontally
-
 ## 🔮 **Future Enhancements**
 
 ### **Planned Features**
