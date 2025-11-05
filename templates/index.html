@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafarSavvy - University Transport Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Markdown parsing & sanitization -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-bus"></i>
+                <h1>SafarSavvy</h1>
+                <span class="subtitle">University Transport Assistant</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="showSystemInfo()">
+                    <i class="fas fa-info-circle"></i> About
+                </button>
+                <button id="themeToggle" class="btn btn-secondary" aria-label="Toggle theme" title="Toggle theme">
+                    <i class="fas fa-moon"></i> Theme
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="chat-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fas fa-bus"></i>
+                    <h2>Student Transport Assistant</h2>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn btn-outline" onclick="startNewChat()">
+                        <i class="fas fa-plus"></i> New Chat
+                    </button>
+                    <button class="btn btn-outline" onclick="showSystemInfo()">
+                        <i class="fas fa-info-circle"></i> System Info
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Welcome to SafarSavvy!</h3>
+                    <p>I'm your university transport assistant. I can help you with questions about:</p>
+                    <ul>
+                        <li>Bus routes and stops</li>
+                        <li>Timings and schedules</li>
+                        <li>Student bus pass/registration</li>
+                        <li>Service updates and policies</li>
+                    </ul>
+                    <p><strong>I'm fully trained with SafarSavvy transport information. Ask me anything about buses, routes, timings, or registration!</strong></p>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        id="chatInput" 
+                        placeholder="Ask about buses, routes, timings, or registration..."
+                        rows="1"
+                        onkeydown="handleKeyDown(event)"
+                    ></textarea>
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- System Info Modal -->
+    <div id="systemInfoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-info-circle"></i> System Information</h3>
+                <button class="close-btn" onclick="closeModal('systemInfoModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="system-info">
+                    <div class="info-item">
+                        <strong>System:</strong> SafarSavvy University Transport RAG
+                    </div>
+                    <div class="info-item">
+                        <strong>Version:</strong> 2.0 Professional
+                    </div>
+                    <div class="info-item">
+                        <strong>AI Model:</strong> DeepSeek via OpenRouter
+                    </div>
+                    <div class="info-item">
+                        <strong>Vector Database:</strong> ChromaDB
+                    </div>
+                    <div class="info-item">
+                        <strong>Embeddings:</strong> all-mpnet-base-v2
+                    </div>
+                    <div class="info-item">
+                        <strong>Status:</strong> <span class="status-online">Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
