@@ -47,7 +47,7 @@ def main():
     
     # Start the application
     print("🌐 Starting web server on http://localhost:8000")
-    print("📚 SafarSavvy AI is ready to process your PDFs!")
+    print("📚 SafarSavvy AI is ready to answer your questions!")
     print("\nPress Ctrl+C to stop the server")
     
     try:
